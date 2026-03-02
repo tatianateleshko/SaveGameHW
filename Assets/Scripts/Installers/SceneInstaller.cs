@@ -1,4 +1,3 @@
-using Game.DI;
 using Game.Progress;
 using Game.Registry;
 using Game.SaveLoadService;
@@ -14,7 +13,6 @@ namespace Game.Installers
         [SerializeField] private Helper _helper;
         public override void InstallBindings()
         {
-            Container.Bind<IDIService>().To<DIService>().AsSingle();
             Container.BindInterfacesTo<SaveLoaderService>().AsSingle();
             Container.BindInterfacesTo<SaveLoadRegistry>().AsSingle();
             Container.BindInterfacesTo<ProgressService>().AsSingle();
